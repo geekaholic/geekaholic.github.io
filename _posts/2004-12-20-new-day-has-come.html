@@ -1,0 +1,23 @@
+---
+layout: post
+title: A new day has come!
+date: '2004-12-20T11:39:00.000-06:00'
+author: geekaholic
+tags: 
+modified_time: '2004-12-23T07:42:48.856-06:00'
+blogger_id: tag:blogger.com,1999:blog-8947964.post-110380936885845441
+blogger_orig_url: https://www.geekaholic.org/2004/12/new-day-has-come.html
+---
+
+Welcome to virtusa is a phrase I kept hearing all day from many who gave me a warm welcome. Today was my first day at the new office. A new machine was already allocated with a sticker containing my login details. The machine boasted a 2.8GHz processor and 1GB RAM which made me quite content. It was as if they had been waiting for me.
+<br />
+<br />I spent the rest of the day remove that other OS, and reinstalling Debian Sarge Linux. The new <a href="http://www.debian.org/devel/debian-installer/">Sarge installer</a>, which is still beta, turns out to be very user-friendly when comparing with the previous Woody installer. Within a couple of hours I got a very good desktop linux running on KDE 3.2.3. There was a problem with Xfree86 probing the correct monitor frequency for the Samsung SyncMaster 753DF, so I was stuck with 60Hz at 1024x768. Now I must admit a secret. I have super powers which enable me to view 60Hz flicker. This also makes give me a headache so I decided to get the proper frequency values for the monitor. I was too lazy to go around and see try reading the values, which should normally be printed in the back of the monitor. Luckly I found a tool.
+<br />
+<br /><pre>
+<br /># get-edid | parse-edid
+<br /></pre>
+<br />
+<br />I could generate the necessary stuff to put into the Xfree86 configuration file.
+<br />
+<br />The rest of the day was spent reading a lot of manuals and documentation as well as emails. So begins a new journey, one I hope will last a long time :)
+<br />

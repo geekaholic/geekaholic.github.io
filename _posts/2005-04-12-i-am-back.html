@@ -1,0 +1,12 @@
+---
+layout: post
+title: I am back...
+date: '2005-04-12T06:13:00.000-05:00'
+author: geekaholic
+tags: 
+modified_time: '2005-04-16T02:58:15.456-05:00'
+blogger_id: tag:blogger.com,1999:blog-8947964.post-111330459508062694
+blogger_orig_url: https://www.geekaholic.org/2005/04/i-am-back.html
+---
+
+Its been ages since I last blogged and I think I've gotten a bit rusty. Been busy with office work towards the end of the financial year and then to find that I'm supposed to hand over a project for my 3D advanced graphics class. It was one of those mission impossible projects, considering I haven't even had a look at <a href="http://www.openscenegraph.org">OpenSceneGraph</a>, the open source C++ graphics  API, I had to build this using. If that wasn't enough!, my car just suddenly broke down last Friday on my way to work and ended up eating my whole day of Friday and half of Saturday. Luckily as if through a miracle, the lecturer listened to the plea of many and extended the dead line... thank you sir!<br /><br />Yesterday I finally managed to remaster knoppix based on 3.7 for a friend to put on the next issue of the upcoming magazine  - IT Times. The problem I've been struggling is that the ISO I remastered would boot on some machines and not on others. Apparently the exact instructions on most of the <a href="http://www.knoppix.net/wiki/Knoppix_Remastering_Howto">Knoppix remaster HOWTOs</a> didn't yield a version that boots on all desktops. By trial and error and modifying the mkisofs command I discovered that on some CD/DVD ROMS having the -J option (Juliet) didn't produce a bootable knoppix CD. When I changed it to -R (RockRidge) it worked fine. So if you ever remaster knoppix and find that the final ISO doesn't boot try the following command instead to create the ISO.<br /><br /><samp><br />mkisofs -l -r -R -v -V "KNOPPIX desktop" -no-emul-boot -boot-load-size 4 -boot-info-table -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -hide-rr-moved -o /mnt/remaster/knoppix_desktop.iso /mnt/remaster/master<br /></samp><br /><br />I handed the CD to my friend Suchetha, who took it over to the IT Times magazine and wowed them. This months issue of the magazine is out and its only 150/= (rupees) which is worth the quality of material and the fact you get a free CD with it.<br /><br />Well that's it from me for now. The sinhala/tamil new year is just around the corner so I will have some time to work on some interesting stuff. <br /><br />Happy sinhala & tamil new year!

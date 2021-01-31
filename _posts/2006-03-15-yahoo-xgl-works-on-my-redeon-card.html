@@ -1,0 +1,12 @@
+---
+layout: post
+title: Yahoo! Xgl works on my redeon card
+date: '2006-03-15T03:29:00.000-06:00'
+author: geekaholic
+tags: 
+modified_time: '2006-03-16T01:32:48.813-06:00'
+blogger_id: tag:blogger.com,1999:blog-8947964.post-114241562936317048
+blogger_orig_url: https://www.geekaholic.org/2006/03/yahoo-xgl-works-on-my-redeon-card.html
+---
+
+<a href="http://www.flickr.com/photos/64179753@N00/112808351/" title="Kde"><img src="http://static.flickr.com/52/112808351_52b7c8cf59_m.jpg" width="240" height="180" alt="xgl-kde" /></a><br /><br />While the title of this post isn't affiliated with Yahoo Inc., that was my reaction soon after I re-emerge Xgl and compiz with the paint_patch enabled.<br /><br />Now it works perfectly.. well except for the F12 compose like effect. No more black patches on the screen. <br /><br /><a href="http://www.gentoo.org">Gentoo</a> does really rock! when you need to be on the bleeding edge as after I switched to the latest unofficial portage overlay called xgl-coffee, I got the transparent patch that allows me to easily make any focused window transparent, simply using Alt+mouse wheel as well as an all important kdelibs patch that allows applications to be minimized to the system tray.<br /><br />As you can see in the screenshot, I'm running Xgl on kde (using gnome-window-decorator for now since kde-wondow-decorator is not ready) with full transparency and other nice effects. Here is the custom script I use to load kde.<br /><br /><code><br />#!/bin/bash<br />echo ">Starting XGL at Display: $1"<br />echo "========= XGL ============"<br /># If nvidia or any other<br />#Xgl :$1 -ac -accel xv -accel glx:pbuffer &<br /># If ati<br />Xgl :$1 -ac -accel xv:pbuffer -accel glx:pbuffer &<br />sleep 3<br />echo "======= COMPIZ ==========="<br />DISPLAY=:$1 LD_LIBRARY_PATH=/usr/lib/opengl/xorg-x11/lib/ compiz --replace decoration wobbly fade switcher minimize cube rotate zoom scale move resize place opacity &<br />sleep 3<br />echo "====== DECORATIONS ======="<br />DISPLAY=:$1 gnome-window-decorator &<br />#DISPLAY=:$1 kde-window-decorator &<br />echo "======= Kde ============"<br />DISPLAY=:$1 /usr/kde/3.5/bin/startkde &<br /></code><br /><br />The only other important thing missing is 3D direct-rendering, which I hope will be resolved soon! I also had the liberty of checking out the <a href="http://kororaa.org/">Xgl livecd</a> (again based on Gentoo ;) on my Nvidia barebone system and it works awesomely great! Superfast, no flicker.... absolutely stunning!

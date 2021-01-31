@@ -1,0 +1,38 @@
+---
+layout: post
+title: WiFi radio..
+date: '2005-01-25T13:30:00.000-06:00'
+author: geekaholic
+tags: 
+modified_time: '2005-01-26T13:17:05.670-06:00'
+blogger_id: tag:blogger.com,1999:blog-8947964.post-110676702566920031
+blogger_orig_url: https://www.geekaholic.org/2005/01/wifi-radio.html
+---
+
+It's 1:30 AM in the morning and I'm having fun. I've just setup a wireless radio station in my house. Ok, before you start to park your car outside my gate to tune in, take a deep breath and chill. Its awesome but no big deal! 
+<br />
+<br />All you do is install something called an <a href="http://www.icecast.org">icecast</a> server, which is supposed to be better than the original <a href="http://www.shoutcast.com/">Shoutcast server</a> by the folks that brought you winAmp and then sold it to the devil (aOL) ;) Ice cast server version 2.x can stream both mp3s and ogg vorbis (better quality and patent free). A small vague run down of the steps keeping in mind this is a blog and not a howto!
+<br />
+<br />First I installed icecast2 on debian
+<br /># apt-get install icecast2
+<br />
+<br />You need to modify the configuration file, the main setting being setting a password and then start the server.
+<br />
+<br /># /etc/init.d/icecast2 start
+<br />
+<br />Next you need a client streaming application that will connect to the icecast server and stream a live feed such as from a mic / soundcard loopback or in my case using a simple play list. There are a couple of streaming clients, notably <a href="http://star.arm.ac.uk/~spm/software/liveice.html">liveice</a> and the xmms plugin for liveice seem popular for streaming mp3s, but my initial encounter with it was unsuccessful. Perhaps because it was originally written for icecast version 1, but the documentation mentions it works for version 2. So I ended up settling down with ices2 package which can stream ogg vorbis files to the server. I also installed mp32ogg package to help me convert some mp3 file to the ogg format.
+<br />
+<br /># apt-get install ices2 mp32ogg
+<br />
+<br />You can easily (but with patience) convert mp3 directories to ogg files by using mp32ogg. I then copied a sample xml configuration file required for ices2 from /usr/share/doc/ices2/examples/ices-playlist.xml and modified it slightly. You can then create a playlist file and launch ices2 from the command line with the xml config file as the only parameter.
+<br />
+<br />~/mp3$ find . -name '*.ogg' > playlist.txt
+<br />~/mp3$ ices2 ices-playlist.xml
+<br />
+<br />Thats it! I rushed over to my notebook which is connected to the streaming server over a WiFi wireless link, and launched the browser and typed the path to the streaming server as  follows.
+<br />
+<br />http://streamingserver_ip:8000/example1.ogg. m3u
+<br />
+<br />This should launch your default media player and start playing the stream. Note that if you don't want to use the browse and would rather type the path to the stream directly on the media player then you should omit the .m3u extension. Currently I've got two notebooks in two different rooms playing the same song with a slight lag between the two. Now all I need is a couple of wireless speakers that are icecast/shoutcast compatible so I can leave one in each room, without having to sacrifice wireless notebooks for the job.
+<br />
+<br />May be another day~ Happy streaming!

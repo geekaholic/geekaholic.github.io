@@ -1,0 +1,12 @@
+---
+layout: post
+title: LiveCD from scratch workshop
+date: '2005-11-12T09:22:00.000-06:00'
+author: geekaholic
+tags: 
+modified_time: '2005-11-13T11:46:40.120-06:00'
+blogger_id: tag:blogger.com,1999:blog-8947964.post-113190308578360241
+blogger_orig_url: https://www.geekaholic.org/2005/11/livecd-from-scratch-workshop.html
+---
+
+Just came back from a long day workshop organized as part of the <a href="http://www.iitc.lk/index.php">IITC 2005 Conference</a>. Myself, <a href="http://anuradha-ratnaweera.blogspot.com/">Anuradha</a> and Chamath undertook the almost impossible task of a, "less than a day" workshop, consisting of several integrated interruptions (ie. lunch, tea breaks), to cover a relatively advanced subject, to a relatively inexperienced GNU/Linux user, and still managed to pull it off - somewhat!<br /><br /> Now that I'm done patting our selves in the back, I'd like to say that it was extremely fun :) After all, there is really nothing like going under the hood and getting some "machan (grease)", on a Saturday morning tinkering with Linux. For those who missed it, we had a small crowd (that is too small to mention), but made it much easier to managed and give personal attention to each attendee. Here is a summary of tasks we managed to cover:<br /><br /> <ul><br />  <li> Presentation on the Linux kernel's boot process, from the BIOS all the way upto the runlevels, both during a normal hard drive boot and during a Live CD boot.<br />  <li> Install <a href="http://www.taprobane.org">Taprobane GNU/Linux</a>, using the cfdisk->mkfs->cp -a method<br />  <li> Create an initrd using mkinitrd and use it as a prototype to build a modifiable initrd<br />  <li> Hack the initrd's /linuxrc script to drop us to a shell and play with a world before the BigBang - /sbin/init<br />  <li> Presentation on using <a href="http://squashfs.sourceforge.net/">Squashfs</a> and <a href="http://www.unionfs.org">UnionFS</a> to provide write support anywhere<br />  <li> Creation of a squashfs file system using out live running system<br />  <li> Creating the final iso and testing it using qemu<br /> </ul><br /><br /> Unfortunately, our iso booted only half way before panicing, by which time we were out of time for debugging. Despite this, I hope, the attendees had a lot of fun, hacking away.

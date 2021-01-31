@@ -1,0 +1,13 @@
+---
+layout: post
+title: Watching the Worldcup over WiFi
+date: '2007-04-14T12:18:00.000-05:00'
+author: geekaholic
+tags: 
+modified_time: '2007-04-14T13:11:56.408-05:00'
+thumbnail: http://farm1.static.flickr.com/220/458880105_de116b766c_t.jpg
+blogger_id: tag:blogger.com,1999:blog-8947964.post-5833944703735846892
+blogger_orig_url: https://www.geekaholic.org/2007/04/watching-worldcup-over-wifi.html
+---
+
+Sure it doesn't beat watching the match on the big screen. But wouldn't it still be cool if you could didn't have to always sit in front of the tv all time as the match went on. Well today I decided to play around with the idea since Sri Lanka wasn't playing anyway.<br /><br />Now my home isn't physically networked in anyway so I have to rely on the slower WiFi to do the job. Worse still is the fact that my WiFi Router is upstairs where our phone line happens to terminate, (it doubles as an ADSL Router) and so the signal reception is pretty bad (about 40%).<br /><br />Its been a while since I played around with <a href="http://www.videolan.org/vlc/">VLC</a> and I knew it has improved somewhat since I last had a go at it. Mainly the addition of H.264 for better quality at lower bit rates. So after playing around with several codecs, I settled with h.264 (AVC) after discovering a combination that worked (you can't just mix arbitrary video encapsulation containers with a given codec and expect it to just work). Following are the settings, I ended up being satisfied with: (Also see screenshot)<br /><code><br />Stream Type: HTTP<br />Stream Port: 8080 (you can use any port here)<br />Video codec: h264 @ 192 kb/s<br />Audio codec: mp4a @ 64 kb/s (mono)<br />Video container: ASF<br /></code><br /><br /><a href="http://www.flickr.com/photos/babytux/458880105/" title="Streaming match"><img src="http://farm1.static.flickr.com/220/458880105_de116b766c.jpg" width="500" height="313" alt="vlc_streaming" /></a><br /><br />As far as getting the TV in, I plugged in the S-Video out from my cable box to the S-video in of my bttv878 compatible Prolink Pixelview Play TV Pro2.<br /><br /><p><a href="http://www.flickr.com/photos/babytux/458879138/" title="Watching match"><img src="http://farm1.static.flickr.com/180/458879138_54faff2181_m.jpg" width="240" height="173" alt="watch_match" hspace="5" align="left" /></a> For playing the stream, I used mplayer (you could also use VLC itself for this) with the following URL at the command line.</p><br /><br /><p><br /><code>mplayer http://192.168.1.3:8080</code><br /><br />That's it! Back to watching the match ... NZ just came to bat second innings :D<br /></p>

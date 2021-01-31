@@ -1,0 +1,18 @@
+---
+layout: post
+title: Alternate VIM Reloaded
+date: '2020-08-07T19:11:00.004-05:00'
+author: geekaholic
+tags:
+- howto
+- foss
+- linux
+- editor
+- vim
+modified_time: '2020-09-02T01:10:04.903-05:00'
+thumbnail: https://1.bp.blogspot.com/-wt68jATduVM/Xy3qa7WgMjI/AAAAAAAAUMw/FGhdT0Ul9_QY53PBuWNcrqjPM1XfepkqACLcBGAsYHQ/s72-c/neovim-pine64.png
+blogger_id: tag:blogger.com,1999:blog-8947964.post-7544168775622814373
+blogger_orig_url: https://www.geekaholic.org/2020/08/alternate-vim-reloaded.html
+---
+
+   <p>A little over 6 years ago, or just 2 posts below :), I wrote about how I use VIM from the command-line to invoke a GUI version of VIM, where each file would appear in a separate tab. I've stuck with that setup to this day, where VIM is still my main IDE whether working on Linux or macOS.</p> <p>Recently I bought a pine64 based <a href="https://www.pine64.org/pinebook-pro/" target="_blank">PINEBOOK Pro</a>&nbsp;laptop which is powered by a low-cost ARM64 <a href="https://en.wikipedia.org/wiki/Single-board_computer" target="_blank">Single Board Computer (SBC)</a>. This came pre-installed with <a href="https://manjaro.org/download/" target="_blank">Manjaro</a> KDE edition of Linux. Though this laptop is no slouch (I find myself using it more thanks to 8hrs+ battery),  I wanted to keep it lean without loading too many GTK apps.</p> <p>KDE, being built on Qt, I decided to try neovim-Qt, which is powered by neovim, a somewhat newer rewrite of VIM, that is pretty slick and fast. This is how I got neovim-Qt working in a similar manner to that of vim / gvim.</p>   <p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-wt68jATduVM/Xy3qa7WgMjI/AAAAAAAAUMw/FGhdT0Ul9_QY53PBuWNcrqjPM1XfepkqACLcBGAsYHQ/s1095/neovim-pine64.png" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="974" data-original-width="1095" src="https://1.bp.blogspot.com/-wt68jATduVM/Xy3qa7WgMjI/AAAAAAAAUMw/FGhdT0Ul9_QY53PBuWNcrqjPM1XfepkqACLcBGAsYHQ/s640/neovim-pine64.png" width="640" /></a></div><br /><p></p> <h2>Install packages</h2>   <p>First, install neovim-qt. On Manjaro, this would involve pacman.</p>   <code>sudo pacman -Sy neovim-qt   </code>   <p>Next, the secret sauce ;), a project called <a href="https://github.com/mhinz/neovim-remote" target="_blank">neovim-remote</a>. Fortunately, it can be installed quite easily via pip. But first I had to install pip.</p> <code><div><code>sudo pacman -Sy python-pip</code></div>pip3 install neovim-remote   </code>   <p>This exposes a command nvr but because I use mvi with the VIM setup, I just aliased mvi to nvr so it behaves much like how I'm used to. I also had to add ~/.local/bin to my $PATH variable.</p>   <code>echo "alias mvi='nvr --remote-tab'" &gt;&gt; ~/.bashrc</code><div><code>echo 'export PATH="~/.local/bin:$PATH"' &gt;&gt; ~/.bashrc</code></div><div><code><br /></code></div><div><code></code><p>Finally, we need to start a neovim server so I added	a shell script to do that as well.</p>   <code>echo "NVIM_LISTEN_ADDRESS=/tmp/nvimsocket nvim-qt" &gt; ~/bin/start-nvim.sh <br />chmod +x ~/bin/start-nvim.sh   </code>     <h2>Using it</h2>   <p>Usage is simple enough. First I'd launch neovim-qt as a server using the shell script.</p>   <code>~/bin/start-nvim.sh   </code>     <p>Then open files using the mvi alias.</p>   <code>mvi /etc/passwd /etc/hosts   </code>     <p>That's it! Checkout my <a href="https://github.com/geekaholic/mydotfiles/blob/master/.nvimrc" target="_blank">~/.nvimrc</a> for how I've customized it.</p>   </div>
