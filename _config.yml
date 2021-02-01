@@ -19,6 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Geek with an attitude
+title_separator: "-"
+subtitle: Hello my name is Bud and I'm a geek-a-holic
+name: Bud Siddhisena
 email: bud@geekaholic.org
 description: >- # this means to ignore newlines until "baseurl:"
   Geek and techie, I love tinkering with Linux and FOSS projects. When not 
@@ -32,9 +35,17 @@ github_username:  geekaholic
 
 # Build settings
 #theme: minima
-theme: jekyll-theme-midnight
+#theme: minimal-mistakes-jekyll
+remote_theme: "mmistakes/minimal-mistakes@4.21.0"
+minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+
+# Social Sharing
+twitter:
+  username: geekaholic
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
