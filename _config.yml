@@ -33,6 +33,33 @@ twitter_username: geekaholic
 github_username:  geekaholic
 #google_analytics: <tracking_id>
 
+# Site Author
+author:
+  name             : "Bud Siddhisena"
+  avatar           : "/assets/images/geekaholic-bio.jpg"
+  bio              : >-
+    Geek and techie, I love tinkering with Linux and FOSS projects. When not 
+    geeking out, I'm trading on RH or watching too much Youtube. I also enjoy 
+    experimenting with cooking and so far no one has gotten food poisoning!
+  location         : "Chicago, IL"
+  email            :
+  links:
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/geekaholic"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/geekaholic"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "http://www.linkedin.com/in/budsiddhisena"
+    - label: "Slideshare"
+      icon: "fab fa-slideshare"
+      url: "http://slideshare.net/geekaholic"
+    - label: "GitHub"
+      icon: "fab fa-github"
+      url: "https://github.com/geekaholic"
+
 # Build settings
 #theme: minima
 #theme: minimal-mistakes-jekyll
